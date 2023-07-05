@@ -8,10 +8,11 @@ export default {
 
 <template>
     <div class="card">
-        <img :src="'https://api.themoviedb.org/3/search/multi?api_key=d3d234302eb94390ac484f418bb0621a&query=' + myfilm.poster_path"
-            class="poster-img" />
-        <h4>Nome: {{ myfilm.original_title }}</h4>
+        <img :src="'http://image.tmdb.org/t/p/w500/' + myfilm.poster_path" class="poster-img" />
+        <p>Nome: {{ myfilm.title }}</p>
+        <p>NOme originale: {{ myfilm.original_title }}</p>
         <p>Data uscita: {{ myfilm.release_date }}</p>
+        <p>Voto: {{ Math.round(myfilm.vote_average) }}</p>
     </div>
 </template>
 

@@ -25,7 +25,17 @@ export default {
       let myurl = store.apiUrl;
 
       if (store.serchtext !== '') {
-        myurl += `?https://api.themoviedb.org/3/search/multi?api_key=d3d234302eb94390ac484f418bb0621a&query=${store.serchtext}`;
+        myurl += `https://api.themoviedb.org/3/search/multi?api_key=d3d234302eb94390ac484f418bb0621a&query=${store.serchtext}`;
+      }
+
+      if (store.genere !== '') {
+        if (store.serchtext !== '') {
+          myurl += '&';
+        }
+        else {
+          myurl += '?';
+        }
+        myurl += 'genre_ids=${store.genere.id}'
       }
 
       axios.get(myurl).then((response) => {
