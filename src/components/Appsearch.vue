@@ -5,6 +5,7 @@ export default {
         return {
             store,
             listageneri: [
+                {},
                 {
                     "id": 28,
                     "name": "Action"
@@ -94,9 +95,9 @@ export default {
     <div>
         <div>
             <input type="text" placeholder="" v-model="store.serchtext" @keyup.enter="$emit('cerca')">
-            <!--<select v-model="store.genere">
+            <select v-model="store.genere">
                 <option v-for="(generi, index) in listageneri" :key="index" :value="generi.id">{{ generi.name }}</option>
-            </select>-->
+            </select>
             <button @click="$emit('cerca')">vai</button>
         </div>
     </div>

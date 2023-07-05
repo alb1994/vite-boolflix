@@ -7,10 +7,8 @@ import Appmain from './components/Appmain.vue'
 
 export default {
   components: {
-    Appcard,
     Appmain,
     Appsearch
-
 
   },
   data() {
@@ -27,7 +25,7 @@ export default {
       let myurl = store.apiUrl;
 
       if (store.serchtext !== '') {
-        myurl += '?original_name=${store.serchtext}';
+        myurl += `?https://api.themoviedb.org/3/search/multi?api_key=d3d234302eb94390ac484f418bb0621a&query=${store.serchtext}`;
       }
 
       axios.get(myurl).then((response) => {
@@ -44,8 +42,6 @@ export default {
     <div class="conteiner">
       <Appsearch @cerca="getcharacters" />
       <Appmain />
-      <Appcard />
-
     </div>
   </div>
 </template>

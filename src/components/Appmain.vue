@@ -1,6 +1,6 @@
 <script>
-import { store } from '../store.js';
 import Appcard from './Appcard.vue';
+import { store } from '../store.js';
 export default {
   components: {
     Appcard,
